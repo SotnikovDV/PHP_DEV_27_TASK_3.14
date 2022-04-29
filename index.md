@@ -1,5 +1,7 @@
 ## Welcome to GitHub Pages
 
+[открыть](README.md)
+
 You can use the [editor on GitHub](https://github.com/SotnikovDV/PHP_DEV_27_TASK_3.14/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
