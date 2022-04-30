@@ -31,7 +31,7 @@
 
 Чтобы посмотреть все установленные настройки и узнать где именно они заданы, используйте команду:
 
-```
+``` bash
 $ git config --list --show-origin
 ```
 
@@ -39,7 +39,7 @@ $ git config --list --show-origin
 
 Первое, что вам следует сделать после установки Git — указать ваше имя и адрес электронной почты. Это важно, потому что каждый коммит в Git содержит эту информацию, и она включена в коммиты, передаваемые вами, и не может быть далее изменена:
 
-```
+``` bash
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
 ```
@@ -52,7 +52,7 @@ $ git config --global user.email johndoe@example.com
 
 Теперь, когда вы указали своё имя, самое время выбрать текстовый редактор, который будет использоваться, если будет нужно набрать сообщение в Git. По умолчанию Git использует стандартный редактор вашей системы, которым обычно является Vim. Если вы хотите использовать другой текстовый редактор, например, Emacs, можно проделать следующее:
 
-```
+``` bash
 $ git config --global core.editor emacs
 ```
 
@@ -60,7 +60,7 @@ $ git config --global core.editor emacs
 
 В случае с Notepad++, популярным редактором, скорее всего вы захотите установить 32-битную версию, так как 64-битная версия ещё не поддерживает все плагины. Если у вас 32-битная Windows или 64-битный редактор с 64-битной системой, то выполните следующее:
 
-```
+``` bash
 $ git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 ```
 
@@ -75,7 +75,7 @@ $ git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -m
 
 Например, чтобы установить имя main для вашей ветки по умолчанию, выполните следующую команду:
 
-```
+``` bash
 $ git config --global init.defaultBranch main
 ```
 
@@ -83,7 +83,7 @@ $ git config --global init.defaultBranch main
 
 Если вы хотите проверить используемую конфигурацию, можете использовать команду `git config --list`, чтобы показать все настройки, которые Git найдёт:
 
-```
+``` bash
 $ git config --list
 user.name=John Doe
 user.email=johndoe@example.com
@@ -98,14 +98,16 @@ color.diff=auto
 
 Также вы можете проверить значение конкретного ключа, выполнив `git config <key>`:
 
-```
+``` bash
 $ git config user.name
 John Doe
 ```
 
 > Так как Git читает значение настроек из нескольких файлов, возможна ситуация когда Git использует не то значение что вы ожидали. В таком случае вы можете спросить Git об origin этого значения. Git выведет имя файла, из которого значение для настройки было взято последним:  
-`$ git config --show-origin rerere.autoUpdate` \
-`file:/home/johndoe/.gitconfig	false`
+
+``` bash
+$ git config --show-origin rerere.autoUpdate
+file:/home/johndoe/.gitconfig	false
 ```
 
 ***

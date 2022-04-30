@@ -19,17 +19,26 @@
 
 Если вы хотите установить Git под Linux как бинарный пакет, это можно сделать, используя обычный менеджер пакетов вашего дистрибутива. Если у вас Fedora (или другой похожий дистрибутив, такой как RHEL или CentOS), можно воспользоваться dnf:
 
+``` bash
 $ sudo dnf install git-all
+```
+
 Если же у вас дистрибутив, основанный на Debian, например, Ubuntu, попробуйте apt:
 
+```` bash
 $ sudo apt install git
+```
+
 Чтобы воспользоваться дополнительными возможностями, посмотрите инструкцию по установке для нескольких различных разновидностей Unix на сайте Git https://git-scm.com/download/linux.
 
 ### **Установка на Mac**
 
 Существует несколько способов установки Git на Mac. Самый простой — установить Xcode Command Line Tools. В версии Mavericks (10.9) и выше вы можете добиться этого просто первый раз выполнив 'git' в терминале.
 
+``` bash
 $ git --version
+```
+
 Если Git не установлен, вам будет предложено его установить.
 
 Если Вы хотите получить более актуальную версию, то можете воспользоваться бинарным установщиком. Установщик Git для OS X доступен для скачивания с сайта Git https://git-scm.com/download/mac.
@@ -50,7 +59,7 @@ $ git --version
 
 Если вы действительно хотите установить Git из исходников, у вас должны быть установлены следующие библиотеки, от которых он зависит: autotools, curl, zlib, openssl, expat и libiconv. Например, если в вашей системе используется dnf (Fedora) или apt-get (системы на базе Debian), вы можете использовать одну из следующих команд для установки всех зависимостей, используемых для сборки и установки бинарных файлов Git:
 
-```
+``` bash
 $ sudo dnf install dh-autoreconf curl-devel expat-devel gettext-devel \
   openssl-devel perl-devel zlib-devel
 $ sudo apt-get install dh-autoreconf libcurl4-gnutls-dev libexpat1-dev \
@@ -59,7 +68,7 @@ $ sudo apt-get install dh-autoreconf libcurl4-gnutls-dev libexpat1-dev \
 
 Для того, чтобы собрать документацию в различных форматах (doc, html, info), понадобится установить дополнительные зависимости:
 
-```
+``` bash
 $ sudo dnf install asciidoc xmlto docbook2X
 $ sudo apt-get install asciidoc xmlto docbook2x
 ```
@@ -68,19 +77,19 @@ $ sudo apt-get install asciidoc xmlto docbook2x
 
 Если вы используете систему на базе Debian (Debian/Ubuntu/Ubuntu-производные), вам так же понадобится установить пакет install-info:
 
-```
+``` bash
 $ sudo apt-get install install-info
 ```
 
 Если вы используете систему на базе RPM (Fedora/RHEL/RHEL-производные), вам так же понадобится установить пакет getopt, который уже установлен в системах на базе Debian:
 
-```
+``` bash
 $ sudo dnf install getopt
 ```
 
 К тому же из-за различий имён бинарных файлов вам понадобится сделать следующее:
 
-```
+``` bash
 $ sudo ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
 ```
 
@@ -88,7 +97,7 @@ $ sudo ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
 
 Затем скомпилируйте и установите:
 
-```
+``` bash
 $ tar -zxf git-2.8.0.tar.gz
 $ cd git-2.8.0
 $ make configure
@@ -99,7 +108,7 @@ $ sudo make install install-doc install-html install-info
 
 После этого вы можете получать обновления Git посредством самого Git:
 
-```
+``` bash
 $ git clone git://git.kernel.org/pub/scm/git/git.git
 ```
 

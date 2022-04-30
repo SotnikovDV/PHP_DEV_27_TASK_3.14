@@ -22,7 +22,7 @@
 
 Для того, чтобы просмотреть список настроенных удалённых репозиториев, вы можете запустить команду git remote. Она выведет названия доступных удалённых репозиториев. Если вы клонировали репозиторий, то увидите как минимум origin — имя по умолчанию, которое Git даёт серверу, с которого производилось клонирование:
 
-```
+``` bash
 $ git clone https://github.com/schacon/ticgit
 Cloning into 'ticgit'...
 remote: Reusing existing pack: 1857, done.
@@ -37,7 +37,7 @@ origin
 
 Вы можете также указать ключ `-v`, чтобы просмотреть адреса для чтения и записи, привязанные к репозиторию:
 
-```
+``` bash
 $ git remote -v
 origin	https://github.com/schacon/ticgit (fetch)
 origin	https://github.com/schacon/ticgit (push)
@@ -45,7 +45,7 @@ origin	https://github.com/schacon/ticgit (push)
 
 Если у вас больше одного удалённого репозитория, команда выведет их все. Например, для репозитория с несколькими настроенными удалёнными репозиториями в случае совместной работы нескольких пользователей, вывод команды может выглядеть примерно так:
 
-```
+``` bash
 $ cd grit
 $ git remote -v
 bakkdoor  https://github.com/bakkdoor/grit (fetch)
@@ -68,7 +68,7 @@ origin    git@github.com:mojombo/grit.git (push)
 
 В предыдущих разделах мы уже упоминали и приводили примеры добавления удалённых репозиториев, сейчас рассмотрим эту операцию подробнее. Для того, чтобы добавить удалённый репозиторий и присвоить ему имя (shortname), просто выполните команду `git remote add <shortname> <url>`:
 
-```
+``` bash
 $ git remote
 origin
 $ git remote add pb https://github.com/paulboone/ticgit
@@ -81,7 +81,7 @@ pb	https://github.com/paulboone/ticgit (push)
 
 Теперь вместо указания полного пути вы можете использовать pb. Например, если вы хотите получить изменения, которые есть у Пола, но нету у вас, вы можете выполнить команду `git fetch pb`:
 
-```
+``` bash
 $ git fetch pb
 remote: Counting objects: 43, done.
 remote: Compressing objects: 100% (36/36), done.
@@ -98,7 +98,7 @@ From https://github.com/paulboone/ticgit
 
 Как вы только что узнали, для получения данных из удалённых проектов, следует выполнить:
 
-```
+``` bash
 $ git fetch [remote-name]
 ```
 
@@ -118,7 +118,7 @@ $ git fetch [remote-name]
 
 Когда вы хотите поделиться своими наработками, вам необходимо отправить их в удалённый репозиторий. Команда для этого действия простая: `git push <remote-name> <branch-name>`. Чтобы отправить вашу ветку master на сервер origin (повторимся, что клонирование обычно настраивает оба этих имени автоматически), вы можете выполнить следующую команду для отправки ваших коммитов:
 
-```
+``` bash
 $ git push origin master
 ```
 
@@ -128,7 +128,7 @@ $ git push origin master
 
 Если хотите получить побольше информации об одном из удалённых репозиториев, вы можете использовать команду `git remote show <remote>`. Выполнив эту команду с некоторым именем, например, origin, вы получите следующий результат:
 
-```
+``` bash
 $ git remote show origin
 * remote origin
   Fetch URL: https://github.com/schacon/ticgit
@@ -147,7 +147,7 @@ $ git remote show origin
 
 Это был пример для простой ситуации и вы наверняка встречались с чем-то подобным. Однако, если вы используете Git более интенсивно, вы можете увидеть гораздо большее количество информации от `git remote show`:
 
-```
+``` bash
 $ git remote show origin
 * remote origin
   URL: https://github.com/my-org/complex-project
@@ -176,7 +176,7 @@ $ git remote show origin
 
 Для переименования удалённого репозитория можно выполнить `git remote rename`. Например, если вы хотите переименовать pb в paul, вы можете это сделать при помощи `git remote rename`:
 
-```
+``` bash
 $ git remote rename pb paul
 $ git remote
 origin
@@ -187,7 +187,7 @@ paul
 
 Если по какой-то причине вы хотите удалить удаленный репозиторий — вы сменили сервер или больше не используете определённое зеркало, или кто-то перестал вносить изменения — вы можете использовать `git remote rm`:
 
-```
+``` bash
 $ git remote remove paul
 $ git remote
 origin
